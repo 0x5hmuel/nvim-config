@@ -1,6 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies = { "windwp/nvim-ts-autotag" },
 	opts = {
 		ensure_installed = { "c", "python", "javascript", "typescript", "svelte", "css" },
 		highlight = {
@@ -20,7 +21,4 @@ return {
 			},
 		},
 	},
-	config = function(_, opts)
-		require("nvim-treesitter.configs").setup(opts)
-	end,
 }

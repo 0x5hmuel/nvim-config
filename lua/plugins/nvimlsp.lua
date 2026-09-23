@@ -53,6 +53,27 @@ return {
 				end,
 			},
 		})
+		require("lspconfig").basedpyright.setup({
+			settings = {
+				basedpyright = {
+					python = {
+						pythonPath = ".venv/bin/",
+					},
+					analysis = {
+						typeCheckingMode = "recommended",
+						autoSearchPaths = true,
+						useLibraryCodeForTypes = true,
+						diagnosticMode = "openFilesOnly",
+						reportUnknownMemberType = false,
+						useTypingExtensions = true,
+						inlayHints = {
+							callArgumentNames = true,
+							callArgumentNamesMatching = true,
+						},
+					},
+				},
+			},
+		})
 
 		-- 🧭 Keymaps
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })

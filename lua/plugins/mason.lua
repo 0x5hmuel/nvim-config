@@ -5,7 +5,7 @@ return {
 		ensure_installed = {
 			"stylua",
 			"fmt",
-			"pyright",
+			-- "pyright",
 			"prettier",
 		},
 	},

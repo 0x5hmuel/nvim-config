@@ -37,6 +37,9 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease wi
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 vim.keymap.set({ "n", "v" }, "bd", vim.cmd.bdelete, { desc = "Close current open buffer" })
+vim.keymap.set({ "n", "v" }, "<leader> nh", function()
+	vim.cmd("noh")
+end)
 
 -- text actions
 vim.keymap.set("n", "<leader>D", "A<Esc>+bdw", {
@@ -45,6 +48,10 @@ vim.keymap.set("n", "<leader>D", "A<Esc>+bdw", {
 vim.keymap.set("n", "<leader>d", '<cmd>normal! A<Esc>"+bdw<cr>', {
 	desc = "Jump to end of line, delete word backwards ",
 })
+
+vim.keymap.set("n", "<leader>rt", function()
+	vim.cmd("restart")
+end)
 
 -- shortcut to open the config directory
 
@@ -62,6 +69,18 @@ vim.keymap.set("n", "<leader>NT", function()
 	vim.cmd("tabnew")
 end, { desc = "Open new tab" })
 
--- vim.keymap.set("n", "<leader>NT", function()
--- 	vim.cmd("tabnew")
--- end, { desc = "Open new tab" })
+vim.keymap.set("n", "<leader>fw", function()
+	vim.cmd("MicroscopePeek")
+end, { desc = "Open in floating window" })
+
+vim.keymap.set("n", "<leader>bd", function()
+	vim.cmd("BDelete this")
+end, { desc = "Close buffer" })
+
+vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all buffers except current" })
+
+-- chainsaw
+--
+vim.keymap.set("n", "<leader>cp", function()
+	vim.cmd("Chainsaw variableLog")
+end, { desc = "Open chainsaw variable log" })

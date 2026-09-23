@@ -18,7 +18,7 @@ return {
 				-- Add other required parameters here
 			},
 			params = {
-				model = "llama3.1", -- Must be changed If llama3.1 is not available
+				model = "gemma4", -- Must be changed If llama3.1 is not available
 				stream = true,
 				default_options = { -- If a default setting is not explicitly set the models default will be used instead
 					mirostat = 0,

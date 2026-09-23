@@ -1,7 +1,13 @@
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		{
+			"mikavilpas/blink-ripgrep.nvim",
+			version = "*", -- use the latest stable version
+		},
+	},
 
 	build = "cargo build --release",
 	-- use a release tag to download pre-built binaries

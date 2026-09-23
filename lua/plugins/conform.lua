@@ -6,18 +6,19 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "black" },
+			python = { "zuban", "black" },
 			javascript = { "prettier", "eslint_d" },
 			typescript = { "prettier", "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
+			javascriptreact = { "eslint_d", "prettier" },
+			typescriptreact = { "eslint_d", "prettier" },
 			json = { "jq" },
 			sh = { "shfmt" },
 			markdown = { "prettier" },
+			nix = { "nixfmt" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
-			async = false,
+			-- async = true,
 			timeout_ms = 5000,
 		},
 		formatters = {

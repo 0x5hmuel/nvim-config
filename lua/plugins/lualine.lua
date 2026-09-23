@@ -34,7 +34,23 @@ return {
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
 			icons_enabled = true,
-			theme = "gruvbox-material",
+			theme = "auto",
+			refresh = {
+				statusline = 1000,
+				tabline = 1000,
+				winbar = 1000,
+				refresh_time = 16, -- ~60fps
+				events = {
+					"WinEnter",
+					"BufEnter",
+					"BufWritePost",
+					"SessionLoadPost",
+					"FileChangedShellPost",
+					"VimResized",
+					"Filetype",
+					"ModeChanged",
+				},
+			},
 		})
 	end,
 }

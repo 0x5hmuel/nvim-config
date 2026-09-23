@@ -1,9 +1,16 @@
 return {
-  "folke/todo-comments.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+	"folke/todo-comments.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	opts = function(_, opts)
+		opts.keywords = opts.keywords or {}
+		opts.keywords.HMMM = {
+			icon = "🤔",
+			color = "#FFFFF3",
+			alt = {
+				"HUH",
+				"THINK",
+			},
+		}
+		return opts
+	end,
 }
