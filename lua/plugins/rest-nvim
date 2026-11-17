@@ -1,0 +1,52 @@
+return {
+	"rest-nvim/rest.nvim",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		opts = function(_, opts)
+			opts.ensure_installed = opts.ensure_installed or {}
+			table.insert(opts.ensure_installed, "http")
+		end,
+	},
+	keys = {
+		{
+			"<leader>Ro",
+			function()
+				vim.cmd("Rest open")
+			end,
+			desc = "Open result pane",
+			mode = "n",
+		},
+		{
+			"<leader>Rr",
+			function()
+				vim.cmd("Rest run")
+			end,
+			desc = "Send request under cursor",
+			mode = "n",
+		},
+		{
+			"<leader>Rc",
+			function()
+				vim.cmd("Rest cookies")
+			end,
+			desc = "Edit cookies file",
+			mode = "n",
+		},
+		{
+			"<leader>Rl",
+			function()
+				vim.cmd("Rest last")
+			end,
+			desc = "Run last request",
+			mode = "n",
+		},
+		{
+			"<leader>RL",
+			function()
+				vim.cmd("Rest logs")
+			end,
+			desc = "Run last request",
+			mode = "n",
+		}
+	}
+}

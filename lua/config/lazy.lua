@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
+			{ out,                            "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -29,7 +29,7 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "base16-everforest-dark-hard" } },
+	install = { colorscheme = { "onedark" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true, notify = false },
 })
@@ -49,12 +49,13 @@ end, { desc = "Run sync for plugins with LPM" })
 
 require("alpha")
 require("oil").setup()
-require("plugins.kulala")
-vim.cmd("colorscheme everforest")
+-- require("plugins.kulala")
+-- vim.cmd("colorscheme ")
 -- vim.cmd("colorscheme nordfox")
+vim.cmd("colorscheme kanagawa-paper")
 
 vim.cmd("set number relativenumber")
-require("kulala")
+-- require("kulala")
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --
@@ -167,3 +168,11 @@ end
 vim.diagnostic.config({
 	update_in_insert = false,
 })
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99      -- Start with all folds open
+vim.opt.foldlevelstart = 99 -- Ensure folds don't collapse on buffer load
+
+
+-- require("plugins.rest-nvim")

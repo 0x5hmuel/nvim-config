@@ -84,3 +84,5 @@ vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all buf
 vim.keymap.set("n", "<leader>cp", function()
 	vim.cmd("Chainsaw variableLog")
 end, { desc = "Open chainsaw variable log" })
+
+vim.keymap.set({ "n", "v" }, "<leader>NH", function() vim.cmd("noh") end, { desc = "Clear search entry" })

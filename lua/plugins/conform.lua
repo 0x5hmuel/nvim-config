@@ -15,6 +15,8 @@ return {
 			sh = { "shfmt" },
 			markdown = { "prettier" },
 			nix = { "nixfmt" },
+			http = { "kulala-fmt" },
+			rest = { "kulala-fmt" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
